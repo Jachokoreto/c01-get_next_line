@@ -35,11 +35,16 @@ $ gcc -D name=definition* [options] [source files] [-o output file]
 
 ## Tester
 [Tripouille/gnlTester: Tester for the get_next_line project of 42 school (github.com)](https://github.com/Tripouille/gnlTester)
+
 [GitHub - harm-smits/gnl-unit-test: A simple get next line unit tester (yizimg.com)](http://phoenix.yizimg.com/harm-smits/gnl-unit-test)
+
 [Moulitest (awesomeopensource.com)](https://awesomeopensource.com/project/yyang42/moulitest)
 
 ## References
 [What is a File Descriptor? (computerhope.com)](https://www.computerhope.com/jargon/f/file-descriptor.htm)
+
 https://www.geeksforgeeks.org/input-output-system-calls-c-create-open-close-read-write/
+
 [Reading from file using read()](https://stackoverflow.com/questions/19769542/reading-from-file-using-read-function)
+
 [Read Binary File in C | Delft Stack](https://www.delftstack.com/howto/c/read-binary-file-in-c/)
