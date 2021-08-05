@@ -8,9 +8,10 @@ get_next_line reads a line on the file descriptor(fd) and returns it.
 - read from a file and standard input
 - libft is not allowed, needed functions will be contain in allowed .c files
 - Must compile with flag *-D BUFFER_SIZE=xx* (see below)
+
 `gcc -Wall -Wextra -Werror -D BUFFER_SIZE=42 <files>.c.`
-- `read` must use the *BUFFER_SIZE* defined during compilation to read from a file or stdin
-- `lseek` not allowed. File reading must only done once? 
+- `read()` must use the *BUFFER_SIZE* defined during compilation to read from a file or stdin
+- `lseek()` not allowed. File reading must only done once? 
 - undefined behavior 
 	- if the fd switches to a different file before reading everything from the first fd. (due to the the change of file position)
 	- when reading from binary file. However, if you wish, you can make this behavior coherent
