@@ -23,7 +23,7 @@ get_next_line reads a line on the file descriptor(fd) and returns it.
 > Read each char one by one, to find '\n'
 
 > TEST!
-
+`*(ft_strchr(buffer, '\n')) = 0;` I maybe over-reacting, but this worksss!!
 ## Bonus part
 - Make get_next_line with a single static variable
 - Manage multiple fd, able to read from multiple fd and switch around without losing the reading thread on each fd.

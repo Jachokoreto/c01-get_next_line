@@ -1,12 +1,12 @@
 CC = gcc
 NAME = get_next_line
 CFLAGS = -Wall -Wextra -Werror
-VALGRIND = valgrind -q --leak-check=full
+VALGRIND = valgrind --leak-check=full --track-origins=yes
 
 all: $(NAME)
 
 $(NAME):
-	gcc $(CFLAGS) -D BUFFER_SIZE=1 *.c -o $@ && $(VALGRIND) ./$@
+	gcc $(CFLAGS) -D BUFFER_SIZE=20 *.c -o $@ && $(VALGRIND) ./$@
 
 m: $(NAME)
 
