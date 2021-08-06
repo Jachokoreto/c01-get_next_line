@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 22:41:19 by jatan             #+#    #+#             */
-/*   Updated: 2021/08/05 12:03:39 by jatan            ###   ########.fr       */
+/*   Updated: 2021/08/06 13:05:02 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-void	*ft_calloc(size_t nmemb, size_t size)
-{
-	void	*ptr;
+// void	*ft_calloc(size_t nmemb, size_t size)
+// {
+// 	void	*ptr;
 
-	ptr = malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
-}
+// 	ptr = malloc(nmemb * size);
+// 	if (!ptr)
+// 		return (NULL);
+// 	ft_bzero(ptr, nmemb * size);
+// 	return (ptr);
+// }
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -58,4 +58,32 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		*s++ = *s2++;
 	*s = '\0';
 	return (s - s1_len - s2_len);
+}
+
+char	*ft_strdup(const char *s)
+{
+	char	*dup;
+	int		i;
+
+	dup = (char *)malloc(sizeof (*dup) * (ft_strlen(s) + 1));
+	if (dup == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
+}
+
+int	ft_strlen(const char *s)
+{
+	int	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }
