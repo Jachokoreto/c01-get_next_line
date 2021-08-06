@@ -6,7 +6,7 @@ VALGRIND = valgrind --leak-check=full --track-origins=yes
 all: $(NAME)
 
 $(NAME):
-	gcc $(CFLAGS) -D BUFFER_SIZE=20 *.c -o $@ && $(VALGRIND) ./$@
+	gcc $(CFLAGS) -D BUFFER_SIZE=5 *.c -o $@ && $(VALGRIND) ./$@ && rm ./$@
 
 m: $(NAME)
 
