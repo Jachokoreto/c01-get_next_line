@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 22:41:22 by jatan             #+#    #+#             */
-/*   Updated: 2021/08/07 19:22:57 by jatan            ###   ########.fr       */
+/*   Updated: 2021/08/07 19:24:59 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	join_line(char **line, char *str, int *r)
 	if (store)
 	{
 		*line = ft_strdup(store);
+		store = NULL;
 	}
 	else if (str)
 	{
