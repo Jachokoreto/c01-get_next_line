@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 14:04:53 by jatan             #+#    #+#             */
-/*   Updated: 2021/08/06 17:12:43 by jatan            ###   ########.fr       */
+/*   Updated: 2021/08/07 10:45:33 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ int	main(void)
 	char	*s;
 
 	fd = open("test", O_RDWR);
+	s = get_next_line(fd);
+	printf("%s\n", s);
+	free(s);
 	s = get_next_line(fd);
 	printf("%s\n", s);
 	free(s);
