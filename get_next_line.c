@@ -6,46 +6,64 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 22:41:22 by jatan             #+#    #+#             */
-/*   Updated: 2021/08/07 11:56:55 by jatan            ###   ########.fr       */
+/*   Updated: 2021/08/07 19:09:22 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
+#include <fcntl.h>
 
-void	join_line(char **string, char *buffer);
+void	join_line(char **line, char *string, int *r);
 
 char	*get_next_line(int fd)
 {
 	char	buffer[BUFFER_SIZE + 1];
-	char	*string;
-	char	*s;
+	char	*line;
 	int		r;
 
+	join_line(&line, NULL, &r);
 	r = read(fd, &buffer, BUFFER_SIZE);
-	if (r == -1)
+	if (r <= 0 && *line == '\0')
+	{
+		free(line);
 		return (NULL);
-	string = (char *)calloc(1, 1);
+	}
 	while (r > 0)
 	{
 		buffer[r] = 0;
-		s = ft_strchr(buffer, '\n');
-		if (s != NULL)
-		{
-			*s = 0;
-			join_line(&string, buffer);
+		join_line(&line, buffer, &r);
+		if (r == 0)
 			break ;
-		}
-		join_line(&string, buffer);
 		r = read(fd, &buffer, BUFFER_SIZE);
 	}
-	return (string);
+	return (line);
 }
 
-void	join_line(char **string, char *buffer)
+void	join_line(char **line, char *str, int *r)
 {
-	char	*s;
+	static char	*store;
+	char		*tmp;
 
-	s = *string;
-	*string = ft_strjoin(s, buffer);
-	free(s);
+	if (store)
+	{
+		*line = ft_strdup(store);
+		free(store);
+	}
+	else if (str)
+	{
+		if (ft_strchr(str, '\n'))
+		{
+			tmp = ft_strchr(str, '\n');
+			store = ft_strdup(tmp + 1);
+			*(++tmp) = '\0';
+			*r = 0;
+		}
+		tmp = *line;
+		*line = ft_strjoin(tmp, str);
+		free(tmp);
+	}
+	else
+		*line = ft_strdup("");
+
 }

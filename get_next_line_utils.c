@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 22:41:19 by jatan             #+#    #+#             */
-/*   Updated: 2021/08/06 13:05:02 by jatan            ###   ########.fr       */
+/*   Updated: 2021/08/07 18:13:33 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strchr(const char *s, int c)
 	char	*ptr;
 	int		len;
 
+	if (!*s)
+		return (NULL);
 	len = ft_strlen(s);
 	ptr = (char *)s;
 	while (len-- >= 0)
