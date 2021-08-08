@@ -38,7 +38,7 @@ g : Produce debugging information in the operating system’s native format (sta
 ```
 $ gcc -g $(CFLAGS) -D BUFFER_SIZE=42 *.c && $(VALGRIND) ./a.out
 ```
-For Valgrind(mentioned in [link][1] below) and VScode debugger(did not figure out how to build in vsc, so I just use make to compile and run with debugger)
+For Valgrind, mentioned in [link][1] below, and VScode debugger(did not figure out how to build in vsc, so I just use make to compile and run with debugger)
 ## Struggles
 Encountered a lot new valgrind error messages, just CtrlC + CtrlV them onto google, debugging them helped fix my initial code that didn't work. I also try to do my code as compact and readable.
 
