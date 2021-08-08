@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 22:41:22 by jatan             #+#    #+#             */
-/*   Updated: 2021/08/08 17:59:09 by jatan            ###   ########.fr       */
+/*   Updated: 2021/08/08 20:38:41 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*get_next_line(int fd)
 	char	*line;
 	int		r;
 
-	buffer = ft_calloc(BUFFER_SIZE + 1, 1);
+	buffer = (char *)malloc(BUFFER_SIZE + 1);
 	r = read(fd, buffer, 0);
 	line = NULL;
 	if (r >= 0 && buffer)

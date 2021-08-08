@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 22:41:11 by jatan             #+#    #+#             */
-/*   Updated: 2021/08/08 19:44:38 by jatan            ###   ########.fr       */
+/*   Updated: 2021/08/08 20:38:09 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # endif
 
 char	*ft_strchr(const char *s, int c);
-void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s);
 int		ft_strlen(const char *s);

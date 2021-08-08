@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 22:41:19 by jatan             #+#    #+#             */
-/*   Updated: 2021/08/08 18:02:45 by jatan            ###   ########.fr       */
+/*   Updated: 2021/08/08 20:38:02 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,6 @@ char	*ft_strchr(const char *s, int c)
 		ptr++;
 	}
 	return (NULL);
-}
-
-void	*ft_calloc(size_t nmemb, size_t size)
-{
-	unsigned char	*ptr;
-	size_t			i;
-
-	ptr = (unsigned char *)malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	i = 0;
-	while (i < nmemb * size)
-		ptr[i++] = '\0';
-	return (ptr);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
