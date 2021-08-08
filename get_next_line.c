@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 22:41:22 by jatan             #+#    #+#             */
-/*   Updated: 2021/08/08 17:22:18 by jatan            ###   ########.fr       */
+/*   Updated: 2021/08/08 17:59:09 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,22 @@ char	*get_next_line(int fd)
 	buffer = ft_calloc(BUFFER_SIZE + 1, 1);
 	r = read(fd, buffer, 0);
 	line = NULL;
-	if (r < 0 || !buffer)
+	if (r >= 0 && buffer)
 	{
-		free(buffer);
-		return (NULL);
+		r = 1;
+		while (r > 0)
+		{
+			r = read(fd, buffer, BUFFER_SIZE);
+			buffer[r] = 0;
+			join_line(&line, buffer, &r);
+		}
 	}
-	r = 1;
-	while (r > 0)
-	{
-		join_line(&line, buffer, &r);
-		if (r == 0)
-			break ;
-		r = read(fd, buffer, BUFFER_SIZE);
-		buffer[r] = 0;
-	}
-	free(buffer);
-	if (!*line)
+	if (line && !*line)
 	{
 		free(line);
-		return (NULL);
+		line = NULL;
 	}
+	free(buffer);
 	return (line);
 }
 
@@ -61,7 +57,7 @@ void	join_line(char **line, char *str, int *r)
 	}
 	else if (!*line)
 		*line = ft_strdup("");
-	if (*str)
+	if (*str && *r > 0)
 	{
 		tmp = *line;
 		*line = ft_strjoin(tmp, str);
