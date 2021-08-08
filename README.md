@@ -59,4 +59,4 @@ https://www.geeksforgeeks.org/input-output-system-calls-c-create-open-close-read
 [Debug : Understanding Valgrind’s messages](https://epitech-2022-technical-documentation.readthedocs.io/en/latest/valgrind.html)
 
 
-[1]:(https://stackoverflow.com/questions/5134891/how-do-i-use-valgrind-to-find-memory-leaks)
+[1]:https://stackoverflow.com/questions/5134891/how-do-i-use-valgrind-to-find-memory-leaks
