@@ -38,6 +38,9 @@ g : Produce debugging information in the operating system’s native format (sta
 $ gcc -g $(CFLAGS) -D BUFFER_SIZE=42 *.c && $(VALGRIND) ./a.out
 ```
 For Valgrind(mentioned in link[1] below) and VScode debugger(did not figure out how to build in vsc, so I just use make to compile and run with debugger)
+For Valgrind, mentioned in [link][1] below, and VScode debugger(did not figure out how to build in vsc, so I just use make to compile and run with debugger)
+## Struggles
+Encountered a lot new valgrind error messages, just CtrlC + CtrlV them onto google, debugging them helped fix my initial code that didn't work. I also try to do my code as compact and readable.
 
 ## Tester
 [Tripouille/gnlTester: Tester for the get_next_line project of 42 school (github.com)](https://github.com/Tripouille/gnlTester)
@@ -57,4 +60,4 @@ https://www.geeksforgeeks.org/input-output-system-calls-c-create-open-close-read
 [Debug : Understanding Valgrind’s messages](https://epitech-2022-technical-documentation.readthedocs.io/en/latest/valgrind.html)
 
 
-[1]:(https://stackoverflow.com/questions/5134891/how-do-i-use-valgrind-to-find-memory-leaks)
+[1]:https://stackoverflow.com/questions/5134891/how-do-i-use-valgrind-to-find-memory-leaks
