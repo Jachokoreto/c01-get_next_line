@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 22:41:22 by jatan             #+#    #+#             */
-/*   Updated: 2021/08/08 17:15:13 by jatan            ###   ########.fr       */
+/*   Updated: 2021/08/08 17:22:18 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ char	*get_next_line(int fd)
 	}
 	free(buffer);
 	if (!*line)
+	{
+		free(line);
 		return (NULL);
+	}
 	return (line);
 }
 
