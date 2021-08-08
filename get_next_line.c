@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 22:41:22 by jatan             #+#    #+#             */
-/*   Updated: 2021/08/08 20:38:41 by jatan            ###   ########.fr       */
+/*   Updated: 2021/08/08 23:58:24 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 
 void	join_line(char **line, char *string, int *r);
 
+/*
+Malloc buffer and intialized line to NULL for new line.
+Only read line when fd is valid and buffer is available.
+If line is not NULL but empty, set line to NULL.
+Return line.
+*/
 char	*get_next_line(int fd)
 {
 	char	*buffer;
@@ -23,8 +29,8 @@ char	*get_next_line(int fd)
 	int		r;
 
 	buffer = (char *)malloc(BUFFER_SIZE + 1);
-	r = read(fd, buffer, 0);
 	line = NULL;
+	r = read(fd, buffer, 0);
 	if (r >= 0 && buffer)
 	{
 		r = 1;
@@ -44,7 +50,12 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-void	join_line(char **line, char *str, int *r)
+/*
+1. If store is not NULL, else if line is NULL(when first initialized)
+2. If buffer has char and r(read's return) is larger than 0
+3. Look for '\n' in line, store address in tmp, if tmp is not NULL
+*/
+void	join_line(char **line, char *buffer, int *r)
 {
 	static char	*store;
 	char		*tmp;
@@ -57,10 +68,10 @@ void	join_line(char **line, char *str, int *r)
 	}
 	else if (!*line)
 		*line = ft_strdup("");
-	if (*str && *r > 0)
+	if (*buffer && *r > 0)
 	{
 		tmp = *line;
-		*line = ft_strjoin(tmp, str);
+		*line = ft_strjoin(tmp, buffer);
 		free(tmp);
 	}
 	tmp = ft_strchr(*line, '\n');
