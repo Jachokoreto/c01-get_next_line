@@ -1,7 +1,7 @@
 CC = gcc
 NAME = get_next_line
 CFLAGS = -Wall -Wextra -Werror
-VALGRIND = valgrind -q --leak-check=full --track-origins=yes
+VALGRIND = valgrind -q --leak-check=full --track-origins=yes --verbose
 
 all: $(NAME)
 
