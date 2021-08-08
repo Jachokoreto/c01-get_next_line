@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 14:04:53 by jatan             #+#    #+#             */
-/*   Updated: 2021/08/08 15:36:39 by jatan            ###   ########.fr       */
+/*   Updated: 2021/08/08 21:24:30 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(void)
 	{
 		printf(">%s", s);
 		free(s);
- 		s = get_next_line(fd);
+		s = get_next_line(fd);
 		i++;
 	}
 	free(s);
