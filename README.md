@@ -5,7 +5,6 @@ get_next_line reads a line on the file descriptor(fd) and returns it.
 
 ## Should do 
 - return read line on success; return NULL if nothing to read or error
-- read from a file and standard input
 - libft is not allowed, needed functions will be contain in allowed .c files
 - Must compile with flag *-D BUFFER_SIZE=xx* (see below)
 
@@ -27,7 +26,7 @@ get_next_line reads a line on the file descriptor(fd) and returns it.
 ## Bonus part
 - Make get_next_line with a single static variable
 - Manage multiple fd, able to read from multiple fd and switch around without losing the reading thread on each fd.
-(I did not do)
+(I did not do, rumors said its undoable)
 ## gcc Flags
 D : defines a macro to be used by the preprocessor.
 ```
@@ -39,11 +38,10 @@ g : Produce debugging information in the operating system’s native format (sta
 $ gcc -g $(CFLAGS) -D BUFFER_SIZE=42 *.c && $(VALGRIND) ./a.out
 ```
 For Valgrind(mentioned in link[1] below) and VScode debugger(did not figure out how to build in vsc, so I just use make to compile and run with debugger)
-## Struggles
-Encountered a lot new valgrind error messages, just CtrlC + CtrlV them onto google, debugging them helped fix my initial code that didn't work. I also try to do my code as compact and readable.
 
 ## Tester
 [Tripouille/gnlTester: Tester for the get_next_line project of 42 school (github.com)](https://github.com/Tripouille/gnlTester)
+Encountered a lot new valgrind error messages, just CtrlC + CtrlV them onto google, debugging them helped fix my initial code that didn't work.
 
 ## References
 [What is a File Descriptor? (computerhope.com)](https://www.computerhope.com/jargon/f/file-descriptor.htm)
