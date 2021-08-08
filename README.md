@@ -23,23 +23,24 @@ get_next_line reads a line on the file descriptor(fd) and returns it.
 > Read each char one by one, to find '\n'
 
 > TEST!
-`*(ft_strchr(buffer, '\n')) = 0;` I maybe over-reacting, but this worksss!!
+
 ## Bonus part
 - Make get_next_line with a single static variable
 - Manage multiple fd, able to read from multiple fd and switch around without losing the reading thread on each fd.
+(I did not do)
 ## gcc -D
 D : defines a macro to be used by the preprocessor.
 ```
 $ gcc -D name [options] [source files] [-o output file]  
 $ gcc -D name=definition* [options] [source files] [-o output file]
 ```
+## Mistake I made
+- Invalid read (valgrind): trying to dereference uninitialzed pointer
+- Lost memory: Did not free memory
+- 
 
 ## Tester
 [Tripouille/gnlTester: Tester for the get_next_line project of 42 school (github.com)](https://github.com/Tripouille/gnlTester)
-
-[GitHub - harm-smits/gnl-unit-test: A simple get next line unit tester (yizimg.com)](http://phoenix.yizimg.com/harm-smits/gnl-unit-test)
-
-[Moulitest (awesomeopensource.com)](https://awesomeopensource.com/project/yyang42/moulitest)
 
 ## References
 [What is a File Descriptor? (computerhope.com)](https://www.computerhope.com/jargon/f/file-descriptor.htm)
