@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 22:41:19 by jatan             #+#    #+#             */
-/*   Updated: 2021/08/08 13:07:02 by jatan            ###   ########.fr       */
+/*   Updated: 2021/08/08 18:02:45 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strchr(const char *s, int c)
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*ptr;
-	size_t				i;
+	size_t			i;
 
 	ptr = (unsigned char *)malloc(nmemb * size);
 	if (!ptr)
